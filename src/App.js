@@ -5,18 +5,11 @@ import EditableRow from "./components/EditableRow";
 
 function App() {
   const [breakdowns, setBreakdowns] = useState([]);
-  const [currentRow, setCurrentRow] = useState(null);
-  const [editRow, setEditRow] = useState(null);
+
 
   const [editBreakdownId, setBreakdownId] = useState(null);
 
-  const [addFormData, setAddFormData] = useState({
-    breakdownRef: "",
-    companyName: "",
-    driverName: "",
-    regNum: "",
-    breakdownDate: "",
-  });
+
 
   const [editFormData, setEditFormData] = useState({
     breakdownRef: "",
@@ -53,19 +46,19 @@ function App() {
     setEditFormData(newFormData);
   };
 
-  const handleEditFormSubmit = (event) => {
-    event.preventDefault();
+  // const handleEditFormSubmit = (event) => {
+  //   event.preventDefault();
 
-    const editedBreakdown = {
-      breakdownRef: editFormData.breakdownRef,
-      companyName: editFormData.companyName,
-      driverName: editFormData.driverName,
-      regNum: editFormData.regNum,
-      breakdownDate: editFormData.breakdownDate,
-    };
+  //   const editedBreakdown = {
+  //     breakdownRef: editFormData.breakdownRef,
+  //     companyName: editFormData.companyName,
+  //     driverName: editFormData.driverName,
+  //     regNum: editFormData.regNum,
+  //     breakdownDate: editFormData.breakdownDate,
+  //   };
 
-    console.log(editedBreakdown);
-  };
+  //   console.log(editedBreakdown);
+  // };
 
   const [newBreakdown, setNewBreakdown] = useState({
     companyName: "",
@@ -111,52 +104,52 @@ function App() {
       .catch((error) => console.error(error));
   }, []);
 
-  const columns = [
-    {
-      name: "Ref",
-      selector: "breakdownRef",
-      sortable: true,
-    },
-    {
-      name: "Company",
-      selector: "companyName",
-      sortable: true,
-    },
-    {
-      name: "Driver",
-      selector: "driverName",
-      sortable: true,
-    },
-    {
-      name: "Reg. No.",
-      selector: "regNum",
-      sortable: true,
-    },
-    {
-      name: "Date",
-      selector: "breakdownDate",
-      sortable: true,
-      format: (row) => new Date(row.breakdownDate).toLocaleString(),
-    },
-    {
-      name: "Action",
-      cell: (row) => (
-        <Fragment>
-          {editBreakdownId === row.breakdownRef ? (
-            <EditableRow
-              editFormData={editFormData}
-              handleEditFormChange={handleEditFormChange}
-            />
-          ) : (
-            <>
-              <button onClick={() => handleEditClick(row)}>Edit</button>
-            </>
-          )}
-        </Fragment>
-      ),
-      sortable: false
-    }
-  ];
+  // const columns = [
+  //   {
+  //     name: "Ref",
+  //     selector: "breakdownRef",
+  //     sortable: true,
+  //   },
+  //   {
+  //     name: "Company",
+  //     selector: "companyName",
+  //     sortable: true,
+  //   },
+  //   {
+  //     name: "Driver",
+  //     selector: "driverName",
+  //     sortable: true,
+  //   },
+  //   {
+  //     name: "Reg. No.",
+  //     selector: "regNum",
+  //     sortable: true,
+  //   },
+  //   {
+  //     name: "Date",
+  //     selector: "breakdownDate",
+  //     sortable: true,
+  //     format: (row) => new Date(row.breakdownDate).toLocaleString(),
+  //   },
+  //   {
+  //     name: "Action",
+  //     cell: (row) => (
+  //       <Fragment>
+  //         {editBreakdownId === row.breakdownRef ? (
+  //           <EditableRow
+  //             editFormData={editFormData}
+  //             handleEditFormChange={handleEditFormChange}
+  //           />
+  //         ) : (
+  //           <>
+  //             <button onClick={() => handleEditClick(row)}>Edit</button>
+  //           </>
+  //         )}
+  //       </Fragment>
+  //     ),
+  //     sortable: false
+  //   }
+  // ];
 
   return (
     <div className="app-container">
