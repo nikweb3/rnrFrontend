@@ -2,10 +2,10 @@ import React from "react";
 
 const EditableRow = ({editFormData, handleEditFormChange}) => {
 
-    const displayFormData = (event) => {
-        event.preventDefault();
-        console.log(editFormData);
-      }
+    // const displayFormData = (event) => {
+    //     event.preventDefault();
+    //     console.log(editFormData);
+    //   }
 
       const handleUpdate = () => {
         fetch('https://azureapiservice.azurewebsites.net/api/breakdown/update', {
