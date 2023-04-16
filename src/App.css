@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,78 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+
+/* General styles */
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  max-width: 100%;
+  margin-top: 2%;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  font-weight: normal;
+}
+
+th {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.em;
+  font-size: 0.8em;
+}
+
+td {
+  border-bottom: 1px solid #ccc;
+}
+
+
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+  /* Adjust styles for screens with a maximum width of 768px */
+  th,
+  td {
+    font-size: 0.8em;
+    padding: 0.5rem;
+  }
+
+
+  label {
+    font-size: 0.8em;
+    margin-bottom: 0.25rem;
+  }
+
+  input,
+  select {
+    font-size: 0.8em;
+    margin-bottom: 0.5rem;
   }
 }
